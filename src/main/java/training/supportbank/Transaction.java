@@ -1,15 +1,17 @@
 package training.supportbank;
 
+import java.time.LocalDate;
+
 public class Transaction {
 
-    private String date;
+    private LocalDate date;
     private String narrative;
     private String fromAccount;
     private String toAccount;
     private double amount;
 
 
-    public Transaction(String date, String fromAccount, String toAccount, String narrative, double amount) {
+    public Transaction(LocalDate date, String fromAccount, String toAccount, String narrative, double amount) {
         this.date = date;
         this.narrative = narrative;
         this.fromAccount = fromAccount;
@@ -30,7 +32,7 @@ public class Transaction {
     }
 
     public String getDate() {
-        return date;
+        return date.toString();
     }
 
     public String getNarrative() {

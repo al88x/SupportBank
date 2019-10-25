@@ -1,7 +1,7 @@
 package training.supportbank.printer;
 
-import training.supportbank.Account;
-import training.supportbank.Transaction;
+import training.supportbank.model.Account;
+import training.supportbank.model.Transaction;
 
 import java.util.Map;
 
@@ -66,12 +66,12 @@ public class TerminalPrinter implements Printer {
             if (account.getName().equals(transaction.getFromAccount())) {
                 System.out.printf(ANSI_GREEN_TEXT + WIDTH_MONEY, "");
             } else {
-                System.out.printf(ANSI_GREEN_TEXT + WIDTH_MONEY_DECIMAL, transaction.getAmount());
+                System.out.printf(ANSI_GREEN_TEXT + WIDTH_MONEY_DECIMAL, Double.parseDouble(transaction.getAmount()));
             }
             if (account.getName().equals(transaction.getToAccount())) {
                 System.out.printf(ANSI_RED_TEXT + WIDTH_MONEY, "");
             } else {
-                System.out.printf(ANSI_RED_TEXT + WIDTH_MONEY_DECIMAL, transaction.getAmount());
+                System.out.printf(ANSI_RED_TEXT + WIDTH_MONEY_DECIMAL, Double.parseDouble(transaction.getAmount()));
             }
             System.out.printf(ANSI_RESET + "%n");
         }

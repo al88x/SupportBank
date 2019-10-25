@@ -1,14 +1,12 @@
 package training.supportbank;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import javax.security.auth.login.AccountNotFoundException;
+import javax.xml.bind.JAXBException;
 import java.io.IOException;
+
 
 public class Main {
 
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, JAXBException {
 
         Runner runner = new Runner(args);
     }

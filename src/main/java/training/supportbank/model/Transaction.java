@@ -1,23 +1,30 @@
-package training.supportbank;
-
-import java.time.LocalDate;
+package training.supportbank.model;
 
 public class Transaction {
 
-    private LocalDate date;
+    private String date;
     private String narrative;
     private String fromAccount;
     private String toAccount;
-    private double amount;
+    private String amount;
 
 
-    public Transaction(LocalDate date, String fromAccount, String toAccount, String narrative, double amount) {
+    public Transaction(String date, String fromAccount, String toAccount, String narrative, String amount) {
         this.date = date;
         this.narrative = narrative;
         this.fromAccount = fromAccount;
         this.toAccount = toAccount;
         this.amount = amount;
     }
+
+    public Transaction(String[] metadata) {
+        this.date = metadata[0];
+        this.narrative = metadata[3];
+        this.fromAccount = metadata[1];
+        this.toAccount = metadata[2];
+        this.amount = metadata[4];
+    }
+
 
     public String getFromAccount() {
         return fromAccount;
@@ -27,12 +34,12 @@ public class Transaction {
         return toAccount;
     }
 
-    public double getAmount() {
+    public String getAmount() {
         return amount;
     }
 
     public String getDate() {
-        return date.toString();
+        return date;
     }
 
     public String getNarrative() {

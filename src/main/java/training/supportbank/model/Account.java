@@ -1,4 +1,4 @@
-package training.supportbank;
+package training.supportbank.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +26,9 @@ public class Account {
         double balance = 0;
         for (Transaction transaction : transactions) {
             if (transaction.getFromAccount().equals(this.name)) {
-                balance -= transaction.getAmount();
+                balance -= Double.parseDouble(transaction.getAmount());
             } else {
-                balance += transaction.getAmount();
+                balance += Double.parseDouble(transaction.getAmount());
             }
         }
         return balance;
